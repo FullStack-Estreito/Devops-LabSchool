@@ -15,6 +15,7 @@
             required
             email>
         </div>
+        <span [hidden]="hideMessageErrorEmail" class="errorAlert">E-mail não cadastrado!</span>
 
         <div class="mb-3">
             <label class="form-label" for="userPassword">Password</label>
@@ -25,13 +26,20 @@
             name="userPassword"
             [(ngModel)]="userPasswordInput"
             class="form-control" 
-            required>
+            required
+            minlength="8">
         </div>
+        <span [hidden]="hideMessageErrorPassword" class="errorAlert">Senha errada!</span>
 
         <button 
         type="submit" 
-        class="btn btn-success"
+        class="btn btn-primary"
         [disabled]="loginForm.form.invalid"
         >Login</button>
+
+        <button 
+        (click)="redirectRegisterUser()"
+        class="btn btn-secondary"
+        >Register User</button>
     </form>
 </div>

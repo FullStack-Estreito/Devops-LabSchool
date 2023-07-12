@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoginService {
 
-  constructor() { }
+  url = "http://localhost:3000/usuarios"
+
+  constructor(private httpClient: HttpClient) { }
+
+  getUsers(){
+    return this.httpClient.get<User[]>(this.url)
+  }
 }
