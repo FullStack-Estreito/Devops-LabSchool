@@ -1,14 +1,31 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "email": "mariacarolina@gmail.com",
-            "password": "12345678"
-        },
-        {
-            "id": 2,
-            "email": "alexandrehenrique@gmail.com",
-            "password": "abcd1234"
-        }
-    ]
+  "usuarios": [
+    {
+      "name": "Maria Carolina Knudsen Boabaid",
+      "phone": "48999997777",
+      "dateBirth": "1997-10-14",
+      "cpf": "99999999988",
+      "email": "mariacarolina@gmail.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "name": "Alexandre Henrique Fernandes Nolla",
+      "phone": "48999995555",
+      "dateBirth": "1994-10-14",
+      "cpf": "99999999900",
+      "email": "alexandrehenrique@gmail.com",
+      "password": "abcd1234",
+      "id": 2
+    },
+    {
+      "name": "Fernanda Silva",
+      "phone": "48999555555",
+      "dateBirth": "1990-01-14",
+      "cpf": "88888888888",
+      "email": "fesilva@gmail.com",
+      "password": "eraumavez",
+      "id": 3
+    }
+  ]
 }
