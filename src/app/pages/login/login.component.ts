@@ -34,11 +34,11 @@ export class LoginComponent {
         this.hideMessageErrorEmail = true
 
         // Checking if it match with the input information
-        for (let item of this.users) {
-          if (this.userEmailInput === item.email) {
+        for (let user of this.users) {
+          if (this.userEmailInput === user.email) {
             this.validationEmail = true
 
-            if (this.userPasswordInput === item.password) {
+            if (this.userPasswordInput === user.password) {
               this.validationPassword = true
               break
             }
