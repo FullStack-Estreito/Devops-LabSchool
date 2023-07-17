@@ -26,6 +26,15 @@
       "email": "fesilva@gmail.com",
       "password": "eraumavez",
       "id": 3
+    },
+    {
+      "name": "João Rosa",
+      "phone": "47999992323",
+      "dateBirth": "1990-01-01",
+      "cpf": "45555466789",
+      "email": "joaorosa@gmail.com",
+      "password": "joao1234",
+      "id": 4
     }
   ]
 }
