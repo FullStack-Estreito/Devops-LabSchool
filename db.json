@@ -36,5 +36,31 @@
       "password": "joao1234",
       "id": 4
     }
+  ],
+  "alunos": [
+    {
+      "name": "Ana Luisa Lopes",
+      "phone": "47988884444",
+      "dateBirth": "2000-10-01",
+      "cpf": "33344455500",
+      "grade": 8,
+      "id": 1
+    },
+    {
+      "name": "Felipe Medeiros",
+      "phone": "47999334422",
+      "dateBirth": "2000-09-30",
+      "cpf": "11177766644",
+      "grade": 7,
+      "id": 2
+    },
+    {
+      "name": "Gabriel Lopes",
+      "phone": "48999556666",
+      "dateBirth": "2002-11-28",
+      "cpf": "66677788899",
+      "grade": 9,
+      "id": 3
+    }
   ]
 }
