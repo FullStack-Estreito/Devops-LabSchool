@@ -11,6 +11,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { PublicComponent } from './shared/layouts/public/public.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { RegisterStudentComponent } from './pages/register-student/register-student.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     PublicComponent,
     NotFoundComponent,
     HeaderComponent,
+    RegisterStudentComponent,
 
   ],
   imports: [
