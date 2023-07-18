@@ -10,6 +10,7 @@ import { RegisterUserComponent } from './pages/register-user/register-user.compo
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { PublicComponent } from './shared/layouts/public/public.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     RegisterUserComponent,
     PublicComponent,
     NotFoundComponent,
+    HeaderComponent,
 
   ],
   imports: [
