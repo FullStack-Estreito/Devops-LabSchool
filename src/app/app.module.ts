@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     NgxMaskDirective,
     NgxMaskPipe
   ],
-  providers: [provideNgxMask()],
+  providers: [provideNgxMask(), DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
