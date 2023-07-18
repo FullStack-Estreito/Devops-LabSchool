@@ -12,6 +12,8 @@ import { PublicComponent } from './shared/layouts/public/public.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { RegisterStudentComponent } from './pages/register-student/register-student.component';
+import { ListStudentsComponent } from './pages/list-students/list-students.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { RegisterStudentComponent } from './pages/register-student/register-stud
     NotFoundComponent,
     HeaderComponent,
     RegisterStudentComponent,
+    ListStudentsComponent,
 
   ],
   imports: [
@@ -33,7 +36,7 @@ import { RegisterStudentComponent } from './pages/register-student/register-stud
     NgxMaskDirective,
     NgxMaskPipe
   ],
-  providers: [provideNgxMask()],
+  providers: [provideNgxMask(), DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
