@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../shared/services/login.service';
 import { User } from '../../shared/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
   message: string = ''
 
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   login() {
     console.log(this.userEmailInput, this.userPasswordInput)
@@ -59,7 +60,7 @@ export class LoginComponent {
       })}
 
       redirectRegisterUser() {
-        console.log("oi")
+        this.router.navigate(['/register'])
       }
 }
 

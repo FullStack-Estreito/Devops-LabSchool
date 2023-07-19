@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/shared/services/register.service';
 import { DatePipe } from '@angular/common';
 
@@ -14,7 +15,8 @@ export class RegisterUserComponent {
 
   
 
-  constructor(private registerService: RegisterService, private datePipe: DatePipe) {
+
+  constructor(private registerService: RegisterService, private datePipe: DatePipe) 
     this.registerForm = new FormGroup({
       "userName": new FormControl('', Validators.required),
 
@@ -116,6 +118,7 @@ export class RegisterUserComponent {
     this.registerService.postUser(postData)
     .subscribe((result) => {
       console.log(result)
+      this.router.navigate(['/login'])
     })
   }
 

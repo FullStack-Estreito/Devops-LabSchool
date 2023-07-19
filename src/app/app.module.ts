@@ -15,6 +15,11 @@ import { DatePipe } from '@angular/common';
     AppComponent,
     LoginComponent,
     RegisterUserComponent,
+    PublicComponent,
+    NotFoundComponent,
+    HeaderComponent,
+    RegisterStudentComponent,
+    ListStudentsComponent,
 
   ],
   imports: [
