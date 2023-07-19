@@ -13,10 +13,7 @@ export class RegisterUserComponent {
 
   registerForm: FormGroup
 
-  
-
-
-  constructor(private registerService: RegisterService, private datePipe: DatePipe) 
+  constructor(private registerService: RegisterService, private datePipe: DatePipe, private router: Router) {
     this.registerForm = new FormGroup({
       "userName": new FormControl('', Validators.required),
 
