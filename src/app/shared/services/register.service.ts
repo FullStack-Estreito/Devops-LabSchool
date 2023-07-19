@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.model';
+import { Pedagogo } from '../models/pedagogo.model';
 import { Student } from '../models/student.model';
 
 @Injectable({
@@ -12,11 +12,11 @@ export class RegisterService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postUser(data: User){
-    return this.httpClient.post(`${this.url}/usuarios`, data)
+  postPedagogo(data: Pedagogo) {
+    return this.httpClient.post(`${this.url}/pedagogos`, data)
   }
 
-  postStudent(data: Student){
+  postStudent(data: Student) {
     return this.httpClient.post(`${this.url}/alunos`, data)
   }
 }

@@ -112,7 +112,7 @@ export class RegisterUserComponent {
       "password": password 
     }
 
-    this.registerService.postUser(postData)
+    this.registerService.postPedagogo(postData)
     .subscribe((result) => {
       console.log(result)
       this.router.navigate(['/login'])

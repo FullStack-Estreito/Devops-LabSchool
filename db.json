@@ -35,6 +35,15 @@
       "email": "joaorosa@gmail.com",
       "password": "joao1234",
       "id": 4
+    },
+    {
+      "name": "Mariana Pereira",
+      "phone": "48999995555",
+      "dateBirth": "19/10/1974",
+      "cpf": "12345678900",
+      "email": "marianapereira@hotmail.com",
+      "password": "olatudobem",
+      "id": 5
     }
   ],
   "alunos": [
@@ -77,6 +86,14 @@
       "cpf": "99978756555",
       "grade": 7,
       "id": 5
+    },
+    {
+      "name": "Karina Rodrigues",
+      "phone": "48999337729",
+      "dateBirth": "21/06/2001",
+      "cpf": "11111111111",
+      "grade": 6,
+      "id": 6
     }
   ]
 }

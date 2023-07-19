@@ -1,5 +1,4 @@
 export interface Pedagogo {
-    id: number,
     name: string,
     phone: string,
     dateBirth: string,

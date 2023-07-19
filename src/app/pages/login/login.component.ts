@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../shared/services/login.service';
-import { Pedagogo } from '../../shared/models/user.model';
+import { Pedagogo } from '../../shared/models/pedagogo.model';
 import { Router } from '@angular/router';
 
 
@@ -58,11 +58,12 @@ export class LoginComponent {
           console.log("usuário inexistente")
           this.hideMessageErrorEmail = false
         }
-      })}
+      })
+  }
 
-      redirectRegisterUser() {
-        this.router.navigate(['/register'])
-      }
+  redirectRegisterUser() {
+    this.router.navigate(['/register'])
+  }
 }
 
 
