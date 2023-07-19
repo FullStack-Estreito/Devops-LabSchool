@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../shared/services/login.service';
-import { User } from '../../shared/models/user.model';
+import { Pedagogo } from '../../shared/models/user.model';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
 
   userEmailInput: string = ''
   userPasswordInput: string = ''
-  users: User[] = []
+  users: Pedagogo[] = []
   validationEmail: boolean = false
   validationPassword: boolean = false
   hideMessageErrorPassword: boolean = true

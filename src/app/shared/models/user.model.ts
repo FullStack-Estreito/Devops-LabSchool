@@ -1,4 +1,5 @@
-export interface User {
+export interface Pedagogo {
+    id: number,
     name: string,
     phone: string,
     dateBirth: string,
