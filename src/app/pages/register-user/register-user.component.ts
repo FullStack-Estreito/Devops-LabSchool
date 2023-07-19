@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/shared/services/register.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-register-user',
@@ -14,7 +15,8 @@ export class RegisterUserComponent {
 
   
 
-  constructor(private registerService: RegisterService, private router: Router) {
+
+  constructor(private registerService: RegisterService, private datePipe: DatePipe) 
     this.registerForm = new FormGroup({
       "userName": new FormControl('', Validators.required),
 
@@ -97,10 +99,12 @@ export class RegisterUserComponent {
   register() {
     const name = this.registerForm.get('userName')?.value 
     const phone = this.registerForm.get('userTelephone')?.value 
-    const birth = this.registerForm.get('userBirth')?.value 
+    let birth = this.registerForm.get('userBirth')?.value 
     const cpf = this.registerForm.get('userCPF')?.value 
     const email = this.registerForm.get('userEmail')?.value 
     const password = this.registerForm.get('userPassword')?.value 
+
+    birth = this.datePipe.transform(birth, 'dd/MM/yyyy')
     
     const postData = {
       "name": name,
