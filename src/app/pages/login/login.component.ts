@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../shared/services/login.service';
 import { Pedagogo } from '../../shared/models/user.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,7 @@ export class LoginComponent {
   message: string = ''
 
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   login() {
     console.log(this.userEmailInput, this.userPasswordInput)
@@ -34,11 +36,11 @@ export class LoginComponent {
         this.hideMessageErrorEmail = true
 
         // Checking if it match with the input information
-        for (let item of this.users) {
-          if (this.userEmailInput === item.email) {
+        for (let user of this.users) {
+          if (this.userEmailInput === user.email) {
             this.validationEmail = true
 
-            if (this.userPasswordInput === item.password) {
+            if (this.userPasswordInput === user.password) {
               this.validationPassword = true
               break
             }
@@ -59,7 +61,7 @@ export class LoginComponent {
       })}
 
       redirectRegisterUser() {
-        console.log("oi")
+        this.router.navigate(['/register'])
       }
 }
 
