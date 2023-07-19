@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/shared/services/register.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-register-student',
@@ -12,9 +13,9 @@ export class RegisterStudentComponent {
 
   registerForm: FormGroup
 
-  
 
-  constructor(private registerService: RegisterService, private router: Router) {
+
+  constructor(private registerService: RegisterService, private router: Router, private datePipe: DatePipe) {
     this.registerForm = new FormGroup({
       "studentName": new FormControl('', Validators.required),
 
@@ -54,7 +55,7 @@ export class RegisterStudentComponent {
           return { 'birthInvalid': true }
         }
       }
-    return null
+      return null
     }
   }
 
@@ -67,12 +68,14 @@ export class RegisterStudentComponent {
   }
 
   register() {
-    const name = this.registerForm.get('studentName')?.value 
-    const phone = this.registerForm.get('studentTelephone')?.value 
-    const birth = this.registerForm.get('studentBirth')?.value 
-    const cpf = this.registerForm.get('studentCPF')?.value 
-    const grade = this.registerForm.get('studentGrade')?.value  
-    
+    const name = this.registerForm.get('studentName')?.value
+    const phone = this.registerForm.get('studentTelephone')?.value
+    let birth = this.registerForm.get('studentBirth')?.value
+    const cpf = this.registerForm.get('studentCPF')?.value
+    const grade = this.registerForm.get('studentGrade')?.value
+
+    birth = this.datePipe.transform(birth, 'dd/MM/yyyy');
+
     const postData = {
       "name": name,
       "phone": phone,
@@ -80,13 +83,13 @@ export class RegisterStudentComponent {
       "cpf": cpf,
       "grade": grade
     }
-  
-  
+
+    console.log(typeof birth, birth)
     this.registerService.postStudent(postData)
-    .subscribe((result) => {
-      console.log(result)
-    })
+      .subscribe((result) => {
+        console.log(result)
+      })
   }
 
-  
+
 }

@@ -8,12 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { PublicComponent } from './shared/layouts/public/public.component';
+import { DatePipe } from '@angular/common';
+import { ListStudentsComponent } from './pages/list-students/list-students.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HeaderComponent } from './shared/components/header/header.component';
 import { RegisterStudentComponent } from './pages/register-student/register-student.component';
+
 import { ListStudentsComponent } from './pages/list-students/list-students.component';
 import { DatePipe } from '@angular/common';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { PublicComponent } from './shared/layouts/public/public.component';
 
 
 @NgModule({
@@ -25,8 +28,7 @@ import { DatePipe } from '@angular/common';
     NotFoundComponent,
     HeaderComponent,
     RegisterStudentComponent,
-    ListStudentsComponent
-
+    ListStudentsComponent,
   ],
   imports: [
     BrowserModule,
