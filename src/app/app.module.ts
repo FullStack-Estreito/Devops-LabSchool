@@ -12,8 +12,12 @@ import { DatePipe } from '@angular/common';
 import { ListStudentsComponent } from './pages/list-students/list-students.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegisterStudentComponent } from './pages/register-student/register-student.component';
+
+import { ListStudentsComponent } from './pages/list-students/list-students.component';
+import { DatePipe } from '@angular/common';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { PublicComponent } from './shared/layouts/public/public.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,6 @@ import { PublicComponent } from './shared/layouts/public/public.component';
     HeaderComponent,
     RegisterStudentComponent,
     ListStudentsComponent,
-
   ],
   imports: [
     BrowserModule,
