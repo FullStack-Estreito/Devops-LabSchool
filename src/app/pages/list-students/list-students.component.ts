@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 export class ListStudentsComponent implements OnInit {
 
   arrayStudents: Student[] = []
+  orignalArrayStudents: Student[] = []
   userSearch: string = ''
 
   constructor(private listService: ListService, private datePipe: DatePipe) { }
@@ -18,18 +19,19 @@ export class ListStudentsComponent implements OnInit {
   ngOnInit(): void {
     this.listService.getStudents().subscribe((result) => {
       this.arrayStudents = result;
-      for (let item of this.arrayStudents){
-        
-      }
+      this.orignalArrayStudents = [...result]
     })
   }
 
   search(){
-    for (let student of this.arrayStudents){
-      if (student.name.toLowerCase().includes(this.userSearch.toLowerCase())){
-        console.log("oi")
+    if(this.userSearch){
+      this.arrayStudents = this.orignalArrayStudents.filter(student => student.name.toLowerCase().includes(this.userSearch.toLowerCase()))
+      if (this.arrayStudents.length === 0){
+        this.arrayStudents = this.orignalArrayStudents
+        alert("no student")
       }
     }
+
   }
 }
 
