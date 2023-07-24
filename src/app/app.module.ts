@@ -14,6 +14,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegisterStudentComponent } from './pages/register-student/register-student.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { PublicComponent } from './shared/layouts/public/public.component';
+import { RegisterMonitoringComponent } from './pages/register-monitoring/register-monitoring.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { PublicComponent } from './shared/layouts/public/public.component';
     HeaderComponent,
     RegisterStudentComponent,
     ListStudentsComponent,
+    RegisterMonitoringComponent,
   ],
   imports: [
     BrowserModule,

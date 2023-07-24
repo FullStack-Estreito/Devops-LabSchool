@@ -1,4 +1,4 @@
-export interface Pedagogo {
+export interface Teacher {
     name: string,
     phone: string,
     dateBirth: string,
