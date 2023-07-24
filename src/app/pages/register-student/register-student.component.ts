@@ -74,7 +74,7 @@ export class RegisterStudentComponent {
     const cpf = this.registerForm.get('studentCPF')?.value
     const grade = this.registerForm.get('studentGrade')?.value
 
-    birth = this.datePipe.transform(birth, 'dd/MM/yyyy');
+    birth = this.datePipe.transform(birth, 'dd/MM/yyyy')
 
     const postData = {
       "name": name,
@@ -84,7 +84,6 @@ export class RegisterStudentComponent {
       "grade": grade
     }
 
-    console.log(typeof birth, birth)
     this.registerService.postStudent(postData)
       .subscribe((result) => {
         console.log(result)

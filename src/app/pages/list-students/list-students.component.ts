@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/shared/models/student.model';
 import { ListService } from 'src/app/shared/services/list.service';
-import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-list-students',
@@ -14,7 +14,7 @@ export class ListStudentsComponent implements OnInit {
   orignalArrayStudents: Student[] = []
   userSearch: string = ''
 
-  constructor(private listService: ListService, private datePipe: DatePipe) { }
+  constructor(private listService: ListService) { }
 
   ngOnInit(): void {
     this.listService.getStudents().subscribe((result) => {
