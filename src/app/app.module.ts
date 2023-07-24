@@ -15,6 +15,7 @@ import { RegisterStudentComponent } from './pages/register-student/register-stud
 import { HeaderComponent } from './shared/components/header/header.component';
 import { PublicComponent } from './shared/layouts/public/public.component';
 import { RegisterMonitoringComponent } from './pages/register-monitoring/register-monitoring.component';
+import { ListMonitoringComponent } from './pages/list-monitoring/list-monitoring.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { RegisterMonitoringComponent } from './pages/register-monitoring/registe
     RegisterStudentComponent,
     ListStudentsComponent,
     RegisterMonitoringComponent,
+    ListMonitoringComponent,
   ],
   imports: [
     BrowserModule,
