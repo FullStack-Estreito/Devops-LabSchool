@@ -3,25 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { Teacher } from '../models/teacher.model';
 import { Student } from '../models/student.model';
 import { PedagogicalMonitoring } from '../models/pedagogicalMonitoring.model';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  url = "http://localhost:3000"
-
   constructor(private httpClient: HttpClient) { }
 
   postTeacher(data: Teacher) {
-    return this.httpClient.post(`${this.url}/pedagogos`, data)
+    return this.httpClient.post(`${environment.dbJsonUrl}/pedagogos`, data)
   }
 
   postStudent(data: Student) {
-    return this.httpClient.post(`${this.url}/alunos`, data)
+    return this.httpClient.post(`${environment.dbJsonUrl}/alunos`, data)
   }
 
   postPedagogicalMonitoring(data: PedagogicalMonitoring){
-    return this.httpClient.post(`${this.url}/acompanhamentos`, data)
+    return this.httpClient.post(`${environment.dbJsonUrl}/acompanhamentos`, data)
   }
 }
