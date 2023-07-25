@@ -22,7 +22,7 @@
     <div id="rowCards" class="row">
         <div *ngFor="let monitoring of arrayMonitoring" class="col col-xl-4 col-xxl-3">
 
-            <div class="card">
+            <div class="card" (click)="redirectToEdit(monitoring.id)">
                 <div class="card-header">
                     {{monitoring.title}}
                 </div>

@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PrivateModule } from './shared/layouts/private/private.module';
 import { PublicModule } from './shared/layouts/public/public.module';
-import { FormMonitoringComponent } from './shared/components/form-monitoring/form-monitoring.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 

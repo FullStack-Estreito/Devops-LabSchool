@@ -5,6 +5,7 @@ export interface PedagogicalMonitoring {
     date: string
     description: string
     finished: boolean
+    id?: number
 }
 
 export interface PedagogicalMonitoringDictionary {
