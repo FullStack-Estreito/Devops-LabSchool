@@ -9,6 +9,7 @@ import { ListService } from 'src/app/shared/services/list.service';
   styleUrls: ['./list-monitoring.component.css']
 })
 export class ListMonitoringComponent {
+
   arrayMonitoring: PedagogicalMonitoring[] = []
   orignalArrayMonitoring: PedagogicalMonitoring[] = []
   userSearch: string = ''
@@ -37,5 +38,9 @@ export class ListMonitoringComponent {
 
   redirectToRegister() {
     this.route.navigate(['/register-monitoring'])
+  }
+
+  redirectToEdit(id: number | undefined) {
+    this.route.navigate([`edit-monitoring/${id}`])
   }
 }

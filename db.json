@@ -115,12 +115,12 @@
   ],
   "acompanhamentos": [
     {
-      "student": "Felipe Medeiros",
-      "teacher": "Fernanda Silva",
-      "title": "Instruction",
-      "date": "23/07/2023",
-      "description": "Portuguese reinforcement",
-      "finished": true,
+      "student": "Ana Luisa Lopes",
+      "teacher": "Maria Carolina Knudsen Boabaid",
+      "title": "Physics",
+      "date": "25/07/2023",
+      "description": "Physics tutoring",
+      "finished": "",
       "id": 1
     },
     {
