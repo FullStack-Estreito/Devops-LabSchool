@@ -17,7 +17,7 @@ export class ListService {
   }
 
   getTeachers() {
-    return this.httpClient.get<Teacher[]>(`${environment.dbJsonUrl}}/pedagogos`)
+    return this.httpClient.get<Teacher[]>(`${environment.dbJsonUrl}/pedagogos`)
   }
 
   getPedagogicalMonitoring() {
