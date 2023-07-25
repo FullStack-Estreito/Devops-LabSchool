@@ -6,3 +6,8 @@ export interface PedagogicalMonitoring {
     description: string
     finished: boolean
 }
+
+export interface PedagogicalMonitoringDictionary {
+    [key: string]: any; 
+  }
+  

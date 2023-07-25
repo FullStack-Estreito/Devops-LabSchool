@@ -16,6 +16,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { PublicComponent } from './shared/layouts/public/public.component';
 import { RegisterMonitoringComponent } from './pages/register-monitoring/register-monitoring.component';
 import { ListMonitoringComponent } from './pages/list-monitoring/list-monitoring.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ListMonitoringComponent } from './pages/list-monitoring/list-monitoring
     ListStudentsComponent,
     RegisterMonitoringComponent,
     ListMonitoringComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
