@@ -12,6 +12,7 @@ import { PrivateComponent } from './private.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormMonitoringComponent } from '../../components/form-monitoring/form-monitoring.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterMonitoringComponent,
     ListMonitoringComponent,
     HomeComponent,
+    FormMonitoringComponent,
     PrivateComponent
   ],
 
