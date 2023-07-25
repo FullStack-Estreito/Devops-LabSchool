@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PedagogicalMonitoring } from 'src/app/shared/models/pedagogicalMonitoring.model';
 import { ListService } from 'src/app/shared/services/list.service';
 
@@ -12,7 +13,7 @@ export class ListMonitoringComponent {
   orignalArrayMonitoring: PedagogicalMonitoring[] = []
   userSearch: string = ''
 
-  constructor(private listService: ListService) { }
+  constructor(private listService: ListService, private route: Router) { }
 
   ngOnInit(): void {
     this.listService.getPedagogicalMonitoring().subscribe((result) => {
@@ -21,14 +22,20 @@ export class ListMonitoringComponent {
     })
   }
 
-  search(){
-    if(this.userSearch){
+  search() {
+    if (this.userSearch) {
       this.arrayMonitoring = this.orignalArrayMonitoring.filter(monitoring => monitoring.title.toLowerCase().includes(this.userSearch.toLowerCase()))
-      if (this.arrayMonitoring.length === 0){
+      if (this.arrayMonitoring.length === 0) {
         this.arrayMonitoring = this.orignalArrayMonitoring
-        alert("no student")
+        alert("No pedagogical monitoring registered under this title")
       }
     }
+    else if (this.userSearch === '') {
+      this.arrayMonitoring = this.orignalArrayMonitoring
+    }
+  }
 
+  redirectToRegister() {
+    this.route.navigate(['/register-monitoring'])
   }
 }

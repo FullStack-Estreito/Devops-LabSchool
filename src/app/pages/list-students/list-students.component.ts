@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/shared/models/student.model';
 import { ListService } from 'src/app/shared/services/list.service';
 
@@ -14,7 +15,7 @@ export class ListStudentsComponent implements OnInit {
   orignalArrayStudents: Student[] = []
   userSearch: string = ''
 
-  constructor(private listService: ListService) { }
+  constructor(private listService: ListService, private router: Router) { }
 
   ngOnInit(): void {
     this.listService.getStudents().subscribe((result) => {
@@ -24,14 +25,21 @@ export class ListStudentsComponent implements OnInit {
   }
 
   search(){
+
     if(this.userSearch){
       this.arrayStudents = this.orignalArrayStudents.filter(student => student.name.toLowerCase().includes(this.userSearch.toLowerCase()))
       if (this.arrayStudents.length === 0){
         this.arrayStudents = this.orignalArrayStudents
-        alert("no student")
+        alert("No students registered under this name!")
       }
     }
-
+    else if (this.userSearch === ''){
+      this.arrayStudents = [...this.orignalArrayStudents];
+    }
+  }
+  
+  redirectToRegister(){
+    this.router.navigate(['/register-student'])
   }
 }
 

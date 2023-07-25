@@ -15,7 +15,7 @@ export class HomeComponent {
   arrayTeachers: Teacher[] = []
   arrayMonitoring: PedagogicalMonitoring[] = []
   arrayMonitoringFinished: PedagogicalMonitoring[] = []
-  percentageFinished : number = 0
+  percentageFinished : number | string | undefined
   mapMonitoringDates: Map<string, PedagogicalMonitoring[]> | undefined
   dictionaryMonitoringDates: PedagogicalMonitoringDictionary = {}
   
@@ -43,6 +43,8 @@ export class HomeComponent {
       this.arrayMonitoringFinished = this.arrayMonitoring.filter(monitoring => monitoring.finished === true)
 
       this.percentageFinished = this.arrayMonitoringFinished.length / this.arrayMonitoring.length * 100
+      this.percentageFinished = this.percentageFinished.toFixed(2)
+
     })
   }
 

@@ -115,6 +115,7 @@ export class RegisterUserComponent {
     this.registerService.postTeacher(postData)
     .subscribe((result) => {
       console.log(result)
+      alert("User registered with success.")
       this.router.navigate(['/login'])
     })
   }

@@ -1,10 +1,11 @@
-<div class="container-sm">
+<div class="container">
 
     <h1 class="mb-3">LOGIN</h1>
 
     <form (ngSubmit)="login()" #loginForm="ngForm">
 
         <div class="mb-3">
+            <!-- EMAIL -->
             <label class="form-label" for="userEmail">E-mail</label>
 
             <input type="email" 
@@ -17,6 +18,7 @@
         </div>
         <span [hidden]="hideMessageErrorEmail" class="errorAlert">E-mail not registered</span>
 
+        <!-- PASSWORD -->
         <div class="mb-3">
             <label class="form-label" for="userPassword">Password</label>
 
@@ -31,15 +33,21 @@
         </div>
         <span [hidden]="hideMessageErrorPassword" class="errorAlert">Incorrect password</span>
 
-        <button 
-        type="submit" 
-        class="btn btn-primary"
-        [disabled]="loginForm.form.invalid"
-        >Login</button>
+        <!-- BUTTONS -->
+        <div class="d-grid gap-2 col-12 mx-auto">
+            <button
+            type="submit"
+            class="btn btn-primary"
+            style=" background-color: #bfcff7; color: black;"
+            [disabled]="loginForm.form.invalid"
+            >Login</button>
+        </div>
 
-        <button 
-        (click)="redirectRegisterUser()"
-        class="btn btn-secondary"
-        >Register User</button>
+        <div class="d-grid gap-2 col-12 mx-auto">
+            <button
+            (click)="redirectRegisterUser()"
+            class="btn btn-secondary"
+            >Register User</button>
+        </div>
     </form>
 </div>

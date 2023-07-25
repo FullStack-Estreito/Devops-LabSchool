@@ -1,4 +1,4 @@
-<div class="container-sm">
+<div class="container">
 
     <h1 class="mb-3">REGISTER USER</h1>
 
@@ -15,7 +15,8 @@
             <!-- TELEPHONE -->
             <div class="col-md">
                 <div class="form-floating mb-3">
-                    <input type="tel" name="telephone" id="telephone" class="form-control" formControlName="userTelephone" mask="(00) 00000-0000">
+                    <input type="tel" name="telephone" id="telephone" class="form-control"
+                        formControlName="userTelephone" mask="(00) 00000-0000">
                     <label for="telephone">Phone</label>
                     <span *ngIf="validateErrorMessage('userTelephone')">
                         The field telephone is required!
@@ -56,7 +57,8 @@
             <!-- PASSWORD -->
             <div class="col-md">
                 <div class="form-floating mb-3">
-                    <input type="password" name="password" id="password" class="form-control" formControlName="userPassword">
+                    <input type="password" name="password" id="password" class="form-control"
+                        formControlName="userPassword">
                     <label for="password">Password</label>
                     <span *ngIf="validateErrorMessage('userPassword')">
                         The field password is required!
@@ -69,7 +71,8 @@
             <!-- CONFIRM PASSWORD -->
             <div class="col-md">
                 <div class="form-floating mb-3">
-                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" formControlName="userConfirmPassword">
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                        formControlName="userConfirmPassword">
                     <label for="confirmPassword">Confirm password</label>
                     <span *ngIf="validateErrorMessage('userConfirmPassword')">
                         The field confirm password is required!
@@ -84,6 +87,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="this.registerForm.invalid">Register</button>
+        <!-- BUTTON SUBMIT -->
+        <div class="d-grid gap-2 col-12 mx-auto">
+            <button type="submit" class="btn btn-primary" style=" background-color: #bfcff7; color: black;" [disabled]="this.registerForm.invalid">Register</button>
+        </div>
     </form>
 </div>

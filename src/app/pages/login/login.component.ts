@@ -48,7 +48,7 @@ export class LoginComponent {
         }
 
         if (this.validationEmail === true && this.validationPassword === true) {
-          console.log("logado")
+          this.router.navigate(['/home'])
         }
         else if (this.validationEmail === true && this.validationPassword === false) {
           console.log("senha errada")

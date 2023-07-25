@@ -87,6 +87,8 @@ export class RegisterStudentComponent {
     this.registerService.postStudent(postData)
       .subscribe((result) => {
         console.log(result)
+        alert("Student registered with success.")
+        this.router.navigate(['/list-students'])
       })
   }
 

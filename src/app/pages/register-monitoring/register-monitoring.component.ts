@@ -5,6 +5,7 @@ import { Student } from 'src/app/shared/models/student.model';
 import { ListService } from 'src/app/shared/services/list.service';
 import { DatePipe } from '@angular/common';
 import { RegisterService } from 'src/app/shared/services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-monitoring',
@@ -17,7 +18,7 @@ export class RegisterMonitoringComponent {
   arrayStudents: Student[] = []
   arrayTeachers: Teacher[] = []
 
-  constructor(private listService: ListService, private registerService: RegisterService, private datePipe: DatePipe) {
+  constructor(private listService: ListService, private registerService: RegisterService, private datePipe: DatePipe, private route: Router) {
 
     this.registerForm = new FormGroup({
 
@@ -88,6 +89,8 @@ export class RegisterMonitoringComponent {
     this.registerService.postPedagogicalMonitoring(postData)
       .subscribe((result: any) => {
         console.log(result)
+        alert("Pedagogical monitoring registered with success.")
+        this.route.navigate(['/list-monitorings'])
       })
   }
 }
