@@ -19,6 +19,8 @@ export class RegisterMonitoringComponent {
     finished: false
   }
 
+  buttonAction: string = "Register"
+
   constructor(private registerService: RegisterService, private route: Router) {}
 
   register(outputData: PedagogicalMonitoring) {

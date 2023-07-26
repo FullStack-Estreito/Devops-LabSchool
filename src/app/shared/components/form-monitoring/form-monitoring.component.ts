@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Student } from '../../models/student.model';
@@ -26,10 +26,22 @@ export class FormMonitoringComponent {
     description: '',
     finished: false
   }
-  
+
   @Output()
   formInformation: EventEmitter<PedagogicalMonitoring> = new EventEmitter<PedagogicalMonitoring>();
+  
 
+  @Input()
+  initialData: PedagogicalMonitoring = {
+    student: '',
+    teacher: '',
+    title: '',
+    date: '',
+    description: '',
+    finished: false
+  }
+  @Input()
+  buttonName: string = ""
 
   constructor(private listService: ListService, private registerService: RegisterService, private datePipe: DatePipe, private route: Router) {
 
@@ -59,6 +71,29 @@ export class FormMonitoringComponent {
     })
   }
 
+  ngOnChanges(): void {
+    if (this.initialData && this.initialData.date !== null) {
+      const isoFormattedDate = this.convertToIsoDateFormat(this.initialData.date);
+      this.initialData.date = this.datePipe.transform(isoFormattedDate, 'yyyy-MM-dd') ?? '';
+
+
+      this.registerForm.patchValue({
+        'studentName': this.initialData.student,
+
+        'teacherName': this.initialData.teacher,
+
+        'title': this.initialData.title,
+
+        'date': this.initialData.date,
+
+        'description': this.initialData.description,
+
+        'finished': this.initialData.finished
+      })
+    }
+  }
+
+
   validateErrorMessage(field: string) {
     return (this.registerForm.get(field)?.value === null || this.registerForm.get(field)?.value.length === 0) && this.registerForm.get(field)?.touched
   }
@@ -67,6 +102,15 @@ export class FormMonitoringComponent {
     return (this.registerForm.get(field)?.value === '' || this.registerForm.get(field)?.value === 'Select') && this.registerForm.get(field)?.touched
   }
 
+  convertToIsoDateFormat(date: string): string {
+    const parts = date.split('/');
+    if (parts.length === 3) {
+      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    } else {
+      // Se o formato estiver incorreto, retorne a data original
+      return date;
+    }
+  }
 
   formatCurrentDate() {
     const currentDate = new Date()
@@ -83,9 +127,9 @@ export class FormMonitoringComponent {
 
     const student = this.registerForm.get('studentName')?.value
     const teacher = this.registerForm.get('teacherName')?.value
-    const title =  this.registerForm.get('title')?.value
+    const title = this.registerForm.get('title')?.value
     let date = this.registerForm.get('date')?.value
-    const description =  this.registerForm.get('description')?.value
+    const description = this.registerForm.get('description')?.value
     const finisehd = this.registerForm.get('finished')?.value
 
     date = this.datePipe.transform(date, 'dd/MM/yyyy')

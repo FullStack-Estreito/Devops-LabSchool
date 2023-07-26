@@ -23,4 +23,8 @@ export class ListService {
   getPedagogicalMonitoring() {
     return this.httpClient.get<PedagogicalMonitoring[]>(`${environment.dbJsonUrl}/acompanhamentos?_sort=title&_order=asc`)
   }
+
+  getPedagogicalMonitoringById(id: number) {
+    return this.httpClient.get<PedagogicalMonitoring>(`${environment.dbJsonUrl}/acompanhamentos/${id}`)
+  }
 }

@@ -4,7 +4,7 @@
     <div class="form-floating mb-3">
         <select class="form-select" formControlName="studentName" name="nameStudent" id="nameStudent">
             <option selected>Select</option>
-            <option *ngFor="let student of arrayStudents">
+            <option *ngFor="let student of arrayStudents" [value]="student.name">
                 {{student.name}}
             </option>
         </select>
@@ -18,7 +18,7 @@
     <div class="form-floating mb-3">
         <select class="form-select" formControlName="teacherName" name="nameTeacher" id="nameTeacher">
             <option selected>Select</option>
-            <option *ngFor="let teacher of arrayTeachers">
+            <option *ngFor="let teacher of arrayTeachers" [value]="teacher.name">
                 {{teacher.name}}
             </option>
         </select>
@@ -72,7 +72,7 @@
 
     <!-- SUBMIT -->
     <div class="d-grid gap-2 col-12 mx-auto">
-        <button type="submit" class="btn btn-success" [disabled]="this.form.form.invalid">Register</button>
+        <button type="submit" class="btn btn-success" [disabled]="this.form.form.invalid">{{buttonName}}</button>
     </div>
 
 </form>
