@@ -15,36 +15,39 @@ export class HomeComponent {
   arrayTeachers: Teacher[] = []
   arrayMonitoring: PedagogicalMonitoring[] = []
   arrayMonitoringFinished: PedagogicalMonitoring[] = []
-  percentageFinished : number | string | undefined
+  percentageFinished: number | string | undefined
   mapMonitoringDates: Map<string, PedagogicalMonitoring[]> | undefined
   dictionaryMonitoringDates: PedagogicalMonitoringDictionary = {}
-  
+
 
   constructor(private listService: ListService) { }
 
+
   ngOnInit(): void {
+    // STUDENTS QUANTITY
     this.listService.getStudents().subscribe((result) => {
       this.arrayStudents = result
     })
 
+    // TEACHERS QUANTITY
     this.listService.getTeachers().subscribe((result) => {
       this.arrayTeachers = result
     })
 
+    // PEDAGOGICAL MONITORING QUANTITY
     this.listService.getPedagogicalMonitoring().subscribe((result) => {
       this.arrayMonitoring = result
 
+      // SEPARATING PEDAGOGICAL MONITORINGS BY DATE
       this.mapMonitoringDates = this.groupMonitoringByDates(this.arrayMonitoring)
       this.mapMonitoringDates.forEach((monitorings: PedagogicalMonitoring[], data: string) => {
         this.dictionaryMonitoringDates[data] = monitorings.length
       })
-      
 
+      // PERCENTAGE OF FINISHED PEDAGOGICAL MONITORINS
       this.arrayMonitoringFinished = this.arrayMonitoring.filter(monitoring => monitoring.finished === true)
-
       this.percentageFinished = this.arrayMonitoringFinished.length / this.arrayMonitoring.length * 100
       this.percentageFinished = this.percentageFinished.toFixed(2)
-
     })
   }
 
@@ -59,6 +62,4 @@ export class HomeComponent {
       return map;
     }, new Map<string, PedagogicalMonitoring[]>());
   }
-
-
 }

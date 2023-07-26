@@ -17,6 +17,7 @@ export class ListStudentsComponent implements OnInit {
 
   constructor(private listService: ListService, private router: Router) { }
 
+  // LOAD DATA OF THE CARS
   ngOnInit(): void {
     this.listService.getStudents().subscribe((result) => {
       this.arrayStudents = result;
@@ -24,8 +25,8 @@ export class ListStudentsComponent implements OnInit {
     })
   }
 
+  // METHOD FILTER BY THE USER SEARCH
   search(){
-
     if(this.userSearch){
       this.arrayStudents = this.orignalArrayStudents.filter(student => student.name.toLowerCase().includes(this.userSearch.toLowerCase()))
       if (this.arrayStudents.length === 0){
@@ -38,6 +39,7 @@ export class ListStudentsComponent implements OnInit {
     }
   }
   
+  // METHOD TO REDIRECT TO REGISTER 
   redirectToRegister(){
     this.router.navigate(['/register-student'])
   }

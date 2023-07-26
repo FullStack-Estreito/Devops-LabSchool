@@ -19,12 +19,15 @@ export class RegisterMonitoringComponent {
     finished: false
   }
 
+  // DATA PASSED DO THE CHILD COMPONENT 
   buttonAction: string = "Register"
 
-  constructor(private registerService: RegisterService, private route: Router) {}
+  constructor(private registerService: RegisterService, private route: Router) { }
 
+  // METHOD FOR POST THE PEDAGOGICAL MONITORING ACCORDING TO DATA PASSED BY THE CHILD COMPONENT
   register(outputData: PedagogicalMonitoring) {
     this.monitoring = outputData
+
     this.registerService.postPedagogicalMonitoring(outputData)
       .subscribe((result: any) => {
         console.log(result)

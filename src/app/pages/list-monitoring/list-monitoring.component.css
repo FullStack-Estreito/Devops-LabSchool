@@ -32,7 +32,6 @@ button, input {
     box-shadow: 1px 1px 2px #606d80;
 }
 
-
 @media (max-width: 537px){
     .col-sm-6 {
         flex: 0 0 auto;

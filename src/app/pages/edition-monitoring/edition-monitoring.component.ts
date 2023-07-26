@@ -13,9 +13,6 @@ export class EditionMonitoringComponent {
 
   monitoring_id: string | null  = ''
   monitoring_id_number: number = 0
-
-  buttonAction: string = "Update"
-
   monitoring: PedagogicalMonitoring = {
     student: '',
     teacher: '',
@@ -23,38 +20,37 @@ export class EditionMonitoringComponent {
     date: '',
     description: '',
     finished: false
-    
   }
+
+  // DATA PASSED DO THE CHILD COMPONENT 
+  buttonAction: string = "Update"
 
   constructor( private route: Router, private activateRoute: ActivatedRoute, private updateService: UpdateService, private listService: ListService) {}
 
-
   ngOnInit(){
+    // GET THE ID BY THE URL
     this.monitoring_id = this.activateRoute.snapshot.paramMap.get('id')
 
     if (this.monitoring_id !== null) {
       this.monitoring_id_number = parseInt(this.monitoring_id)
     }
-  
+    // PASSING THE DATA OF THE SELECTED MONITORING ID 
     this.listService.getPedagogicalMonitoringById(this.monitoring_id_number).subscribe((result) => {
       this.monitoring = result
       console.log(this.monitoring)
-
     }) 
-
   }
 
+  // METHOD FOR UPDATE THE PEDAGOGICAL MONITORING ACCORDING TO DATA PASSED BY THE CHILD COMPONENT
   update(outputData: PedagogicalMonitoring){
 
     this.monitoring = outputData
+
     this.updateService.updateMonitoring(this.monitoring_id_number, this.monitoring)
     .subscribe((result: any) => {
       console.log(result)
       alert("Pedagogical monitoring updated with success.")
       this.route.navigate(['/list-monitorings'])
     })
-    
-
   }
-
 }

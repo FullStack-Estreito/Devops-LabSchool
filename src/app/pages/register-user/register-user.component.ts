@@ -31,6 +31,7 @@ export class RegisterUserComponent {
     })
   }
 
+  // VALIDATING THE CONFIRM PASSWORD
   confirmPasswordValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (this.registerForm == null) {
@@ -47,6 +48,7 @@ export class RegisterUserComponent {
     }
   }
 
+  // VALIDATING THE BIRTH DATE
   dateBirthValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (this.registerForm == null) {
@@ -77,6 +79,7 @@ export class RegisterUserComponent {
     }
   }
 
+  // ERRORS MESSAGES
   validateErrorMessage(field: string) {
     return this.registerForm.get(field)?.value.length === 0 && this.registerForm.get(field)?.touched
   }
@@ -93,6 +96,7 @@ export class RegisterUserComponent {
     return this.registerForm.get('userBirth')?.value.length > 0 && this.registerForm.get('userBirth')?.errors && this.registerForm.get('userBirth')?.hasError('birthInvalid')
   }
 
+  // METHOD TO POST THE NEW TEACHER AND REDIRECT TO HOME
   register() {
     const name = this.registerForm.get('userName')?.value 
     const phone = this.registerForm.get('userTelephone')?.value 
@@ -119,6 +123,5 @@ export class RegisterUserComponent {
       this.router.navigate(['/login'])
     })
   }
-
 }
 

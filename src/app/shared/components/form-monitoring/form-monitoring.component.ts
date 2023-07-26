@@ -27,10 +27,12 @@ export class FormMonitoringComponent {
     finished: false
   }
 
+
+  // PARENT COMPONENT EVENT EMIT
   @Output()
   formInformation: EventEmitter<PedagogicalMonitoring> = new EventEmitter<PedagogicalMonitoring>();
-  
 
+  // DATA RECEIVED FROM THE PARENT COMPONENT
   @Input()
   initialData: PedagogicalMonitoring = {
     student: '',
@@ -61,6 +63,7 @@ export class FormMonitoringComponent {
     })
   }
 
+  // LOAD STUDENTS AND TEACHERS
   ngOnInit(): void {
     this.listService.getStudents().subscribe((result) => {
       this.arrayStudents = result;
@@ -71,11 +74,12 @@ export class FormMonitoringComponent {
     })
   }
 
+  // CHECKING IF INITAL DATA IS PASSED FROMPARENT COMPONENT: EDIT MONITORING
   ngOnChanges(): void {
+
     if (this.initialData && this.initialData.date !== null) {
       const isoFormattedDate = this.convertToIsoDateFormat(this.initialData.date);
-      this.initialData.date = this.datePipe.transform(isoFormattedDate, 'yyyy-MM-dd') ?? '';
-
+      this.initialData.date = this.datePipe.transform(isoFormattedDate, 'yyyy-MM-dd') ?? ''
 
       this.registerForm.patchValue({
         'studentName': this.initialData.student,
@@ -93,7 +97,7 @@ export class FormMonitoringComponent {
     }
   }
 
-
+  // ERRORS MESSAGES
   validateErrorMessage(field: string) {
     return (this.registerForm.get(field)?.value === null || this.registerForm.get(field)?.value.length === 0) && this.registerForm.get(field)?.touched
   }
@@ -102,12 +106,13 @@ export class FormMonitoringComponent {
     return (this.registerForm.get(field)?.value === '' || this.registerForm.get(field)?.value === 'Select') && this.registerForm.get(field)?.touched
   }
 
+  // METHODS TO FORMAT THE DATE
   convertToIsoDateFormat(date: string): string {
-    const parts = date.split('/');
+    const parts = date.split('/')
     if (parts.length === 3) {
-      return `${parts[2]}-${parts[1]}-${parts[0]}`;
-    } else {
-      // Se o formato estiver incorreto, retorne a data original
+      return `${parts[2]}-${parts[1]}-${parts[0]}`
+    } 
+    else {
       return date;
     }
   }
@@ -123,7 +128,8 @@ export class FormMonitoringComponent {
     return `${currentYear}-${currentMonth}-${currentDay}`
   }
 
-  register() {
+  // METHOD TO EMIT THE FORM DATA TO THE PARENT COMPENENT 
+  emitPostData() {
 
     const student = this.registerForm.get('studentName')?.value
     const teacher = this.registerForm.get('teacherName')?.value

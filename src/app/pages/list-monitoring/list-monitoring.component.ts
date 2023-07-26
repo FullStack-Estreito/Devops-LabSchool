@@ -16,6 +16,7 @@ export class ListMonitoringComponent {
 
   constructor(private listService: ListService, private route: Router) { }
 
+  // LOAD DATA OF THE CARDS
   ngOnInit(): void {
     this.listService.getPedagogicalMonitoring().subscribe((result) => {
       this.arrayMonitoring = result;
@@ -23,6 +24,7 @@ export class ListMonitoringComponent {
     })
   }
 
+  // METHOD FILTER BY THE USER SEARCH 
   search() {
     if (this.userSearch) {
       this.arrayMonitoring = this.orignalArrayMonitoring.filter(monitoring => monitoring.title.toLowerCase().includes(this.userSearch.toLowerCase()))
@@ -36,10 +38,12 @@ export class ListMonitoringComponent {
     }
   }
 
+  // METHOD TO REDIRECT TO REGISTER 
   redirectToRegister() {
     this.route.navigate(['/register-monitoring'])
   }
 
+  // METHOD TO REDIRECT TO URL PASSING THE PARAMS 'ID' OF THE CARD
   redirectToEdit(id: number | undefined) {
     this.route.navigate([`edit-monitoring/${id}`])
   }

@@ -25,7 +25,7 @@ export class LoginComponent {
 
   login() {
     console.log(this.userEmailInput, this.userPasswordInput)
-    // Getting the registered users
+    // GETTING THE REGISTERED USERS
     this.loginService.getUsers()
       .subscribe((result) => {
         this.users = result
@@ -35,7 +35,7 @@ export class LoginComponent {
         this.hideMessageErrorPassword = true
         this.hideMessageErrorEmail = true
 
-        // Checking if it match with the input information
+        // CHECKING IF IT MATCH WITH THE INPUT INFORMATION
         for (let user of this.users) {
           if (this.userEmailInput === user.email) {
             this.validationEmail = true
@@ -61,6 +61,7 @@ export class LoginComponent {
       })
   }
 
+  // METHOD TO REDIRECT TO REGISTER
   redirectRegisterUser() {
     this.router.navigate(['/register'])
   }

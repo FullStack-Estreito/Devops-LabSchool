@@ -13,8 +13,6 @@ export class RegisterStudentComponent {
 
   registerForm: FormGroup
 
-
-
   constructor(private registerService: RegisterService, private router: Router, private datePipe: DatePipe) {
     this.registerForm = new FormGroup({
       "studentName": new FormControl('', Validators.required),
@@ -29,6 +27,7 @@ export class RegisterStudentComponent {
     })
   }
 
+  // VALIDATING THE BIRTH DATE
   dateBirthValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (this.registerForm == null) {
@@ -59,6 +58,7 @@ export class RegisterStudentComponent {
     }
   }
 
+  // ERRORS MESSAGES 
   validateErrorMessage(field: string) {
     return (this.registerForm.get(field)?.value === null || this.registerForm.get(field)?.value.length === 0) && this.registerForm.get(field)?.touched
   }
@@ -67,6 +67,7 @@ export class RegisterStudentComponent {
     return this.registerForm.get('studentBirth')?.value.length > 0 && this.registerForm.get('studentBirth')?.errors && this.registerForm.get('studentBirth')?.hasError('birthInvalid')
   }
 
+  // METHOD TO POST NEW STUDENT AND REDIRECT TO LIST-STUDENTS
   register() {
     const name = this.registerForm.get('studentName')?.value
     const phone = this.registerForm.get('studentTelephone')?.value
