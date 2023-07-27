@@ -1,6 +1,6 @@
 # LabSchool Manager
 
-  O objetivo deste projeto é o desenvolvimento de um gerenciamento de educacional, no qual os pedagogos (usuários do sistema) podem consultar os alunos cadastrados no sistema, assim como registrar novos alunos, e consultar os atendimentos pedagógicos realizados, como também editá-los ou registrar novos atendimentos.
+  O objetivo deste projeto é o desenvolvimento de um gerenciamento de um sistema educacional, no qual os pedagogos (usuários do sistema) podem consultar os alunos cadastrados, assim como registrar novos alunos, e consultar os atendimentos pedagógicos realizados, como também editá-los ou registrar novos atendimentos.
 
 É possível entrar no sistema desenvolvido através de um usuário já existente ou registar um novo usuário.
 
@@ -25,9 +25,9 @@
 
 1. Primeiramente, instale o 'Node.Js' no seu computador.
   
-2. Assim que instaldo, insira o comando 'npm install' no seu terminal, ele instalará todas as dependências necessárias para que o projeto seja executado.
+2. Assim que instaldo, abra o projeto no seu editor, e insira o comando 'npm install' no seu terminal, ele instalará todas as dependências necessárias para que o projeto seja executado.
 
-3. Em seguida, ainda no seu terminal, insira o comando 'ng serve'
+3. Em seguida, ainda no seu terminal, insira o comando 'ng serve'.
 
 4. Dentro dos arquivos do projeto, acesse 'package.json', vá em 'scripts' e posicione o mouse em cima de 'server', e clique na opção de 'Executar script' que aparecerá.
 
