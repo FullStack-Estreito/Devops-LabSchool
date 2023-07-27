@@ -19,12 +19,14 @@ export class LoginComponent {
   hideMessageErrorPassword: boolean = true
   hideMessageErrorEmail: boolean = true
   message: string = ''
-
-
+  
   constructor(private loginService: LoginService, private router: Router) { }
 
+  ngOnInit(){
+    let isLoggedIn = this.loginService.loggedCheck()
+  }
+
   login() {
-    console.log(this.userEmailInput, this.userPasswordInput)
     // GETTING THE REGISTERED USERS
     this.loginService.getUsers()
       .subscribe((result) => {
@@ -48,6 +50,7 @@ export class LoginComponent {
         }
 
         if (this.validationEmail === true && this.validationPassword === true) {
+          localStorage.setItem('isLoggedIn', 'true');
           this.router.navigate(['/home'])
         }
         else if (this.validationEmail === true && this.validationPassword === false) {
