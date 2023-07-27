@@ -1,27 +1,39 @@
-# LabSchool
+# LabSchool Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+  O objetivo deste projeto é o desenvolvimento de um gerenciamento de educacional, no qual os pedagogos (usuários do sistema) podem consultar os alunos cadastrados no sistema, assim como registrar novos alunos, e consultar os atendimentos pedagógicos realizados, como também editá-los ou registrar novos atendimentos.
 
-## Development server
+É possível entrar no sistema desenvolvido através de um usuário já existente ou registar um novo usuário.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Técnicas e tecnologias utilizadas
 
-## Code scaffolding
+  O projeto foi desenvolvido com Angular (Versão 16.0.5), Bootstrap e Json Server.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  A arquitetura do projeto se baseou na criação componentes, services e módulos.
+  
+  As técnicas aplicadas ao projeto consistiram no uso de:
+  - environments
+  - data binding
+  - layouts
+  - diretivas
+  - passagem de valores entre componentes
+  - requisições HTTP
+  - rotas sem e com parâmetro
+  - guarda de rotas
+  - formulários 'template-driven' e 'reactive-form'
 
-## Build
+## Execução
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Primeiramente, instale o 'Node.Js' no seu computador.
+  
+2. Assim que instaldo, insira o comando 'npm install' no seu terminal, ele instalará todas as dependências necessárias para que o projeto seja executado.
 
-## Running unit tests
+3. Em seguida, ainda no seu terminal, insira o comando 'ng serve'
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Dentro dos arquivos do projeto, acesse 'package.json', vá em 'scripts' e posicione o mouse em cima de 'server', e clique na opção de 'Executar script' que aparecerá.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Em seguida, navegue para: 'http://localhost:4200/'.
+   
+6. Para entrar no sistema, escolha criar um usuário ou utilize as seguintes credenciais:
+   email - joaorosa@gmail.com
+   senha - joao1234
+   
