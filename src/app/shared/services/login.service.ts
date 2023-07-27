@@ -14,4 +14,15 @@ export class LoginService {
   getUsers() {
     return this.httpClient.get<Teacher[]>(`${environment.dbJsonUrl}/pedagogos`)
   }
+
+  loggedCheck(){
+    let isLoggedIn = localStorage.getItem('isLoggedIn') 
+    if (isLoggedIn === null) {
+      isLoggedIn = "false"
+      return false
+    }
+    else {
+      return true
+    }
+  }
 }

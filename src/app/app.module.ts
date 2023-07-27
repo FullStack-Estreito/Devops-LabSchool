@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PrivateModule } from './shared/layouts/private/private.module';
 import { PublicModule } from './shared/layouts/public/public.module';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
