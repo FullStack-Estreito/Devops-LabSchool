@@ -12,6 +12,8 @@
     background-color: #dce0e6;
     font-weight: bold;
     font-size: 13.5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .list-group-item {
@@ -30,6 +32,12 @@
 button, input {
     font-size: 14px;
     box-shadow: 1px 1px 2px #606d80;
+}
+
+span {
+    font-size: 10px;
+    color: blue;
+    cursor: pointer;
 }
 
 @media (max-width: 537px){
