@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:18 AS construcao
 
 WORKDIR /projeto
 
@@ -6,6 +6,11 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 5000
+RUN npm run build  
 
-CMD [  "npm", "run", "start"] 
+FROM nginx:alpine AS final
+
+COPY --from=construcao /projeto/dist/lab-school /usr/share/nginx/html
+
+EXPOSE 80
+
