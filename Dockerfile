@@ -13,4 +13,3 @@ FROM nginx:alpine AS final
 COPY --from=construcao /projeto/dist/lab-school /usr/share/nginx/html
 
 EXPOSE 80
-
